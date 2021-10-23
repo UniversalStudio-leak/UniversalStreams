@@ -1,0 +1,108 @@
+# Plugin recompiled and cracked by NaulbiMIX | Sponsored by FlatiCommunity (https://t.me/flaticommunity)
+# Specially publication for https://teletype.in/@naulbimix/rumine
+#
+# Плагин разработан командой кодеров UniversalStudio.
+# Если Вы обнаружите какой-либо баг, незамедлительно сообщите нам.
+# Vk: vk.com/universalstudio
+# Site: u-studio.su
+
+# Права на использование команд для стримеров: ustreams.live
+
+
+# Для работы плагина нужно создать ключ от YouTube Data API v3
+# Регистрируем аккаунт на https://console.developers.google.com
+# Добавляем в аккаунт YouTube Data API v3
+# Создаем KEY API и добавляем его в строку GOOGLE_API_KEY
+
+# По дефолту на ключе стоит лимит. 10 тысяч запросов в день. Для комфортного использования
+# нужно увелить лимит до 50 миллионов в день.
+GOOGLE_API_KEY: ''
+
+#KEY: '' Ключ не обязателен, он вообще не используется
+
+# База данных
+MySQL:
+ HOSTNAME: 'localhost'
+ PASSWORD: ''
+ USERNAME: 'bgn'
+ DB: 'bans'
+ PORT: '3306'
+
+INVENTORY_TITLE: 'Стримы YouTube'
+
+FORMAT_ITEM:
+ ITEM_NAME: '&r{streamName}'
+ ITEM_LORE:
+ - ''
+ - '&7Стример: &r{group}{playerName}'
+ - '&7Сейчас смотрят: &a{views}'
+ - ''
+ - '&fЛайков на трансляции: &b{likes}'
+ - '&fДизлайков на трансляции: &c{dislikes}'
+ - ''
+ - '&eНажмите сюда, чтобы получить ссылку на стрим'
+
+ITEM_LIST_EMPTY:
+ ITEM_NAME: '&cНа сервере нет активных трасляций'
+ ITEM_ID: '374'
+ ITEM_LORE: []
+
+INFO_ITEM:
+ ITEM_NAME: '&bПомощь'
+ ITEM_ID: '323'
+ ITEM_LORE:
+ - ''
+ - '&7На сервере можно создавать'
+ - '&7трансляции с площадки &f&lYou&c&lTube'
+ - ''
+ - '&7Как это делать? Для начала'
+ - '&7вам нужно иметь статус &cЮтубер'
+ - ''
+ - '&7После чего вам будут доступны команды:'
+ - '&b&l* &e/stream add [ссылка]'
+ - '&b&l* &e/stream remove'
+ - ''
+ - '&fКаждые &a10 &fминут все игроки будут'
+ - '&fполучать уведомление о всех активных'
+ - '&fтрансляциях на сервере!'
+ - ''
+ - '&cУчти! После того, как ты покинешь сервер'
+ - '&cтрасляция будет прекращена!'
+
+PREFIX_GROUPS:
+ default: '&eИгрок &c'
+
+
+
+YOUTUBER_LIVE_START: |-
+ &c&lВнимание!&f Игрок {group}{playerName} &fначал трансляцию на &c&lYou&f&lTube
+ &f                &7[Нажмите сюда, чтобы перейти на стрим]
+YOUTUBER_LIVE_MESSAGE: '&7Нажмите, чтобы перейти на стрим'
+
+BROADCAST_MESSAGE_STREAM: |-
+ &c&lВнимание!&f На сервере запущено {count}
+ &7[Нажмите сюда, чтобы открыть меню со стримами]
+BROADCAST_LIVE_MESSAGE: '&7Нажмите, чтобы открыть меню'
+
+
+
+NOT_PERM: '&6UniversalStreams &7> &fЧтобы добавить трансляцию вам нужен статус &cЮтубер'
+USAGE_ADD_STREAM: '&6UniversalStreams &7> &e/stream add [ссылка] &7- добавить трасляцию на сервер'
+ERROR_STREAM: '&6UniversalStreams &7> &fОшибка! Либо вы указали неверно ссылку, либо трасляция прекращена!'
+SUCCESSFUL_STREAM_ADD: '&6UniversalStreams &7> &fВы успешно добавили трасляцию на сервер!'
+NOT_LIVE: '&6UniversalStreams &7> &fВашей трансляции нет в списках!'
+SUCCESSFUL_REMOVE_LIVE: '&6UniversalStreams &7> &fВы успешно удалили свою трансляцию из списков!'
+IS_LIVE: '&6UniversalStreams &7> &fОшибка! Вы уже есть в списках!'
+ERROR_BIG_LIVES: '&6UniversalStreams &7> &fОшибка! Список полностью заполнен, немного подождите!'
+MESSAGE_FORMAT: '&6UniversalStreams &7> &fНажмите сюда, чтобы перейти на трансляцию &c&lYou&f&lTube'
+HOVER_MESSAGE: '&e&lКликай'
+WAIT_ADD: '&6UniversalStreams &7> &fПроверяем стрим на целость..'
+
+FORMAT_URL_ERROR: |-
+ &6UniversalStreams &7> &fНеверный формат ссылки!
+ &b&l* &7Пример: &ehttps://www.youtube.com/watch?v=NMre6IAAAiU
+ &b&l* &7Пример: &ehttps://www.youtube.be/NMre6IAAAiU
+HELP_COMMANDS: |-
+ &6UniversalStreams &7> &fПомощь по командам:
+ &b&l* &e/stream add [ссылка] &7- добавить трасляцию на сервер
+ &b&l* &e/stream remove &7- удалить трасляцию с сервера
